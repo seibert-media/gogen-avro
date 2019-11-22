@@ -195,16 +195,8 @@ func (n *Namespace) decodeRecordDefinition(namespace string, schemaMap map[strin
 			}
 		}
 
-		var fieldTags string
-		if tags, ok := field["golang.tags"]; ok {
-			fieldTags, ok = tags.(string)
-			if !ok {
-				return nil, NewWrongMapValueTypeError("golang.tags", "string", tags)
-			}
-		}
-
 		def, hasDef := field["default"]
-		fieldStruct := NewField(fieldName, fieldType, def, hasDef, docString, field, fieldTags)
+		fieldStruct := NewField(fieldName, fieldType, def, hasDef, docString, field)
 
 		decodedFields = append(decodedFields, fieldStruct)
 	}

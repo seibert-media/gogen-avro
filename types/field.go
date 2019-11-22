@@ -11,10 +11,9 @@ type Field struct {
 	hasDef     bool
 	doc        string
 	definition map[string]interface{}
-	fieldTags  string
 }
 
-func NewField(avroName string, avroType AvroType, defValue interface{}, hasDef bool, doc string, definition map[string]interface{}, fieldTags string) *Field {
+func NewField(avroName string, avroType AvroType, defValue interface{}, hasDef bool, doc string, definition map[string]interface{}) *Field {
 	return &Field{
 		avroName:   avroName,
 		avroType:   avroType,
@@ -22,7 +21,6 @@ func NewField(avroName string, avroType AvroType, defValue interface{}, hasDef b
 		hasDef:     hasDef,
 		doc:        doc,
 		definition: definition,
-		fieldTags:  fieldTags,
 	}
 }
 
@@ -36,11 +34,6 @@ func (f *Field) SimpleName() string {
 
 func (f *Field) Doc() string {
 	return f.doc
-}
-
-// Tags returns a field go struct tags if defined.
-func (f *Field) Tags() string {
-	return f.fieldTags
 }
 
 func (f *Field) GoName() string {
