@@ -2,7 +2,7 @@ package types
 
 import (
 	"fmt"
-	"github.com/actgardner/gogen-avro/generator"
+	"github.com/seibert-media/gogen-avro/generator"
 )
 
 const stringWriterInterface = `

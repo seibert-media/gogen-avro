@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/actgardner/gogen-avro/container"
-	"github.com/actgardner/gogen-avro/example/avro"
+	"github.com/seibert-media/gogen-avro/container"
+	"github.com/seibert-media/gogen-avro/example/avro"
 	"os"
 )
 
